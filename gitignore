@@ -1,0 +1,5 @@
+echo venv/ > .gitignore
+echo build/ >> .gitignore
+echo dist/ >> .gitignore
+echo *.exe >> .gitignore
+echo __pycache__/ >> .gitignore

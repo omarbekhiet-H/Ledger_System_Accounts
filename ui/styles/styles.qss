@@ -1,0 +1,236 @@
+/* =======================
+   القواعد العامة
+   ======================= */
+QWidget {
+    font-family: "Segoe UI", "Noto Sans Arabic", "Inter", "Arial", sans-serif;
+    font-size: 11pt; /* حجم خط أوضح */
+    color: #2C3E50; /* نص داكن */
+    background-color: #ECF0F1; /* خلفية رمادي فاتح */
+}
+
+QMainWindow, QDialog {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
+
+/* =======================
+   شريط القوائم (Menubar)
+   ======================= */
+QMenuBar {
+    background-color: #2C3E50; /* أزرق غامق */
+    color: white;
+    font-size: 11pt;
+    padding: 5px;
+}
+QMenuBar::item {
+    background: transparent;
+    padding: 6px 15px;
+}
+QMenuBar::item:selected {
+    background: #34495E;
+    border-radius: 4px;
+}
+
+/* القوائم المنسدلة */
+QMenu {
+    background-color: #FFFFFF;
+    color: #2C3E50;
+    font-size: 10pt;
+    padding: 5px;
+    border: 1px solid #BDC3C7;
+    border-radius: 4px;
+}
+QMenu::item {
+    padding: 6px 20px;
+}
+QMenu::item:selected {
+    background-color: #3498DB;
+    color: white;
+    border-radius: 3px;
+}
+
+/* =======================
+   عنوان النوافذ
+   ======================= */
+QLabel#windowTitle {
+    font-size: 16pt;
+    font-weight: bold;
+    color: #2874A6; /* أزرق غامق */
+    padding-bottom: 8px;
+    border-bottom: 1px solid #BDC3C7;
+    margin-bottom: 10px;
+}
+
+/* =======================
+   GroupBox
+   ======================= */
+QGroupBox {
+    font-weight: bold;
+    margin-top: 8px;
+    border: 1px solid #BDC3C7;
+    border-radius: 6px;
+    padding: 8px 6px;
+    background-color: #FFFFFF;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 2px 8px;
+    background-color: #3498DB;
+    color: white;
+    border-radius: 5px;
+    font-size: 11pt;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+/* =======================
+   Labels
+   ======================= */
+QLabel {
+    color: #2C3E50;
+    font-weight: 500;
+}
+QLabel#totalLabel {
+    font-size: 11pt;
+    font-weight: bold;
+    color: #2874A6;
+}
+QLabel#balanceStatusLabel {
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 2px;
+    border-radius: 3px;
+    background-color: rgba(0,0,0,0.03);
+    min-height: 20px;
+}
+
+/* =======================
+   حقول الإدخال
+   ======================= */
+QLineEdit, QDateEdit, QComboBox, QDoubleSpinBox {
+    border: 1px solid #BDC3C7;
+    border-radius: 4px;
+    padding: 5px 6px;
+    background-color: #F8F9F9;
+    color: #2C3E50;
+    selection-background-color: #3498DB;
+    selection-color: white;
+    min-height: 24px;
+}
+QLineEdit:focus, QDateEdit:focus, QComboBox:focus, QDoubleSpinBox:focus {
+    border: 1px solid #3498DB;
+    background-color: #EBF5FB;
+}
+QLineEdit[readOnly="true"] {
+    background-color: #E9ECEF;
+    color: #6C757D;
+    border: 1px solid #CED4DA;
+}
+
+/* ComboBox & DateEdit arrows RTL */
+QComboBox::drop-down, QDateEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top left;
+    width: 14px;
+    border: none;
+}
+
+/* =======================
+   الأزرار
+   ======================= */
+QPushButton {
+    background-color: #3498DB; /* primary */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 11pt;
+    font-weight: bold;
+    min-width: 80px;
+}
+QPushButton:hover {
+    background-color: #2874A6;
+}
+QPushButton:pressed {
+    background-color: #1F618D;
+}
+
+/* أزرار بألوان خاصة */
+QPushButton#saveButton, QPushButton#addLineButton {
+    background-color: #28a745; /* success */
+}
+QPushButton#saveButton:hover, QPushButton#addLineButton:hover {
+    background-color: #218838;
+}
+
+QPushButton#updateButton {
+    background-color: #ffc107; /* warning */
+    color: #2C3E50;
+}
+QPushButton#updateButton:hover {
+    background-color: #e0a800;
+}
+
+QPushButton#deleteButton, QPushButton#removeLineButton {
+    background-color: #dc3545; /* danger */
+}
+QPushButton#deleteButton:hover, QPushButton#removeLineButton:hover {
+    background-color: #c82333;
+}
+
+QPushButton#clearButton, QPushButton#searchButton {
+    background-color: #17a2b8; /* info */
+}
+QPushButton#clearButton:hover, QPushButton#searchButton:hover {
+    background-color: #138496;
+}
+
+/* =======================
+   الجداول
+   ======================= */
+QTableWidget {
+    background-color: #FFFFFF;
+    border: 1px solid #BDC3C7;
+    border-radius: 6px;
+    color: #2C3E50;
+    font-size: 9pt;  /* أوضح من 7pt */
+    gridline-color: #E5E8E8;
+    alternate-background-color: #F8F9F9;
+}
+QHeaderView::section {
+    background-color: #2874A6;
+    color: white;
+    padding: 6px;
+    border: 1px solid #BDC3C7;
+    font-weight: bold;
+    text-align: center;
+}
+QTableWidget::item {
+    padding: 5px;
+    text-align: right; /* دعم RTL */
+    color: #2C3E50;
+}
+QTableWidget::item:selected {
+    background-color: #D6EAF8;
+    color: #2C3E50;
+    font-weight: bold;
+}
+
+/* =======================
+   إدخال داخل الجداول
+   ======================= */
+QTableWidget QLineEdit, 
+QTableWidget QComboBox, 
+QTableWidget QDoubleSpinBox {
+    border: 1px solid #D1D8DD;
+    border-radius: 3px;
+    padding: 2px;
+    background-color: #FFFFFF;
+}
+QTableWidget QLineEdit:focus, 
+QTableWidget QComboBox:focus, 
+QTableWidget QDoubleSpinBox:focus {
+    border: 1px solid #3498DB;
+    background-color: #EBF5FB;
+}
